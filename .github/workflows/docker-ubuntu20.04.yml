@@ -81,6 +81,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          tag: v0.0.1-ubuntu20.04
+          tag: v0.0.2-ubuntu20.04
           artifacts: ${{ github.workspace }}/artifacts/bazel-dist/*.whl
           token: ${{ secrets.GITHUB_TOKEN }}

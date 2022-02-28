@@ -71,6 +71,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          tag: v0.0.1-archarm
+          tag: v0.0.2-archarm
           artifacts: ${{ github.workspace }}/artifacts/bazel-dist/*.whl
           token: ${{ secrets.GITHUB_TOKEN }}
