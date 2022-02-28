@@ -1,5 +1,6 @@
-on: [push]
-
+on:
+  workflow_dispatch:
+  
 jobs:
   aarch64_job:
     # The host should always be Linux
