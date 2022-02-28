@@ -148,3 +148,6 @@ After build completed, there are two wheel file in bazel-dist which can be share
 aqt-2.1.47-py3-none-any.whl
 anki-2.1.47-cp38-abi3-manylinux2014_aarch64.whl
 ```
+
+# Contributors
+- [sudomain](https://github.com/sudomain)
