@@ -1,6 +1,6 @@
 on:
   workflow_dispatch:
-  
+
 jobs:
   aarch64_job:
     # The host should always be Linux
@@ -60,7 +60,7 @@ jobs:
             echo "build --action_env=PYTHON_SITE_PACKAGES=/usr/lib/python3/dist-packages" >> user.bazelrc
             rm -rf bazel-dist
             
-            bazel build -k --config opt dist
+            bazel build -k --config opt wheels
             cd bazel-bin
 
             tar -zczf "/artifacts/${artifact_name}" .

@@ -49,7 +49,7 @@ jobs:
             echo "build --action_env=PYTHON_SITE_PACKAGES=/usr/lib/python3.9/site-packages" >> user.bazelrc
             rm -rf bazel-dist
             
-            bazel build -k --config opt dist
+            bazel build -k --config opt wheels
 
             cd bazel-bin
 
@@ -65,13 +65,13 @@ jobs:
           ls -al "${PWD}/artifacts"
           cd "${PWD}/artifacts"
           tar -xzvf anki-2.1.47-aarch64.tar.gz
-          tar -xvf dist.tar
-          cd bazel-dist
+          tar -xvf wheels.tar
+          cd wheels
           ls -la
 
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
           tag: v0.0.2-archarm
-          artifacts: ${{ github.workspace }}/artifacts/bazel-dist/*.whl
+          artifacts: ${{ github.workspace }}/artifacts/wheels/*.whl
           token: ${{ secrets.GITHUB_TOKEN }}
